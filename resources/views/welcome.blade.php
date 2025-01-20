@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.main')
 
-        <title>Laravel</title>
+@section('title', 'Guilherme')
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+@section('content')
 
-        <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/scripts.js"></script>
 
-    </head>
-    <body>
-        <h1>teste</h1>
-        @if(10 > 5)
-            <p>Teste vdd</p>
-        @endif
+<h1>Titulo</h1>
+<img src="/img/banner.jpg" alt="Banner">
+@if(10 > 5)
+<p>Teste vdd</p>
+@endif
 
-        <p>{{ $name }}</p>
-        
-        @foreach ($names as $name)
-            <p>{{$loop->index}}</p>
-            <p>{{$name}}</p>
-        @endforeach
+<p>{{ $name }}</p>
 
-        {{-- Comentario Blade--}}
-    </body>
-</html>
+@foreach ($names as $name)
+<p>{{$loop->index}}</p>
+<p>{{$name}}</p>
+@endforeach
+
+@endsection
