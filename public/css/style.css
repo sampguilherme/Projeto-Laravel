@@ -195,6 +195,10 @@ header {
     display: flex;
 }
 
+#description-container {
+    margin-top: 20px;
+}
+
 /* Footer */
 
 footer {
