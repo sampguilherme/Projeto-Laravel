@@ -67,7 +67,7 @@ class EventController extends Controller
     public function show($id) {
         $event = Event::findOrFail($id);
 
-        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+        $eventOwner = User::where('id', '=',$event->user_id)->first()->toArray();
 
         return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
     }
@@ -80,6 +80,13 @@ class EventController extends Controller
 
         return view('events.dashboard', ['events' => $events]);
 
+    }
+
+    public function destroy($id) {
+
+        Event::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg', 'Evento excluído com sucesso!');
     }
 
 }
